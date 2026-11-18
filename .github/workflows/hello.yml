@@ -10,7 +10,7 @@ jobs:
   hola:
     runs-on: ubuntu-latest
     steps:
-      - name: Fallo controlado
-        run: exit 1
+      - name: Saludar
+        run: echo 'Hola desde GitHub Actions'
       - name: Mostrar fecha
         run: date
