@@ -44,7 +44,7 @@ function postgresRepository(connectionString) {
     },
     async complete(id) {
       const result = await pool.query(
-        'UPDATE tasks SET done=TRUE WHERE id=$1 RETURNING id,title,done',
+        'UPDATE tasks SET done=FALSE WHERE id=$1 RETURNING id,title,done',
         [id],
       );
       return result.rows[0] || null;
