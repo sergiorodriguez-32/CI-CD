@@ -40,6 +40,8 @@ function createApp(repository) {
     }
   });
   app.get('/openapi.yaml', (req, res) => res.sendFile('openapi.yaml', { root: process.cwd() }));
+  // Manejador de errores: Express lo reconoce por tener 4 parámetros,
+  // por eso hay que declarar `next` aunque no se use.
   app.use((err, req, res, next) =>
     res.status(err.status || 500).json({ error: err.status ? err.message : 'Error interno' }),
   );
