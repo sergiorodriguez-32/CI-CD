@@ -21,7 +21,7 @@ function createApp(repository) {
   app.get('/tasks', async (req, res, next) => {
     try {
       res.json(await service.list());
-    } catch (e) {
+    }                 catch                       (e)                         {
       next(e);
     }
   });
